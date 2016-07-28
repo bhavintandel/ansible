@@ -98,3 +98,12 @@ _If nodes are connecting for the first time the user has to authenticate if it w
   * To gather fact about the machines: `ansible all -m setup`
 
 
+## First Playbook
+
+```json
+- hosts: node1 
+  remote_user: root
+  tasks:
+    - name: test connection using ping
+      ping:
+```
