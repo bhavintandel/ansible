@@ -12,11 +12,11 @@ It doesn't have any agents, It uses YAML language in form of Ansible Playbooks,
 
 
 ## Introduction
-### Efficient Architecture
+#### Efficient Architecture
 
   * Ansible works by connecting to node and pushing out small programs "Ansible Modules". It executes these modules(over SSH) and remove when finished.
 
-### SSH keys are friends
+#### SSH keys are friends
 
   * Ansible's "authorized_key" module can be used to control what machine can access ehat hosts.
   ```sh
@@ -24,7 +24,7 @@ It doesn't have any agents, It uses YAML language in form of Ansible Playbooks,
   ssh-add ~/.ssh/id_rsa
   ```
 
-### Inventory management
+#### Inventory management
 
   * Inventory can be managed using simple text file. For instance:
   ```sh 
@@ -37,20 +37,20 @@ It doesn't have any agents, It uses YAML language in form of Ansible Playbooks,
   db1.example.com
   ```
 
-### Playbooks
+#### Playbooks
 
   * It can handle multiple slices of your infrastructure topology. 
 
-Ansible is decentralized-it relies on existing OS credentials to control access to remote machines. It can be connected with kerberos,LDAP.`
- -y
+Ansible is decentralized-it relies on existing OS credentials to control access to remote machines. It can be connected with kerberos,LDAP.
+
 
 ## Installation
 
-### Download and Set EPEL
+#### Download and Set EPEL
   * `cd /opt/ && wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm` 
   * `rpm -ivh epel-release-latest-6.noarch.rpm`
 
-### Install Ansible
+#### Install Ansible
   * `yum install ansible -y`
 
 
@@ -61,13 +61,13 @@ Ansible is decentralized-it relies on existing OS credentials to control access 
 
 ## First Command
 
-### Edit /etc/ansible/hosts file
+#### Edit /etc/ansible/hosts file
   * Add `node[1:5]` which means node1, node2 ...
 
-### Pinging all nodes
+#### Pinging all nodes
   * `ansible all -m ping`
 
-### Hello on every node
+#### Hello on every node
   * `ansible all -a "/bin/echo hello"`
 
 _If nodes are connecting for the first time the user has to authenticate if it would like to add it to known_hosts. This can be avoided by adding following line in __/etc/ansible/ansible.cfg__ :
@@ -82,7 +82,7 @@ _If nodes are connecting for the first time the user has to authenticate if it w
   `[webservers]
   www[01:50].example.com`
 
-### Running command on specific hosts (servers)
+#### Running command on specific hosts (servers)
 
 `ansible -m shell -a "hostname" servers`
   
