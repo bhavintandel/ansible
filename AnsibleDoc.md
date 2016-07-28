@@ -78,8 +78,23 @@ _If nodes are connecting for the first time the user has to authenticate if it w
 
   * Non-standard port: `badwolf.example.com:5309`
   * If we just have static ip: `jumper ansible_port=5555 ansible_host=192.168.1.50`
-  * If lots of hosts: `[webservers]
-						www[01:50].example.com`
+  * If lots of hosts: 
+  `[webservers]
+  www[01:50].example.com`
+
+### Running command on specific hosts (servers)
+
+`ansible -m shell -a "hostname" servers`
   
+
+## Few Ad-hoc commands
+
+  * Changing mode: `ansible -m file -a "dest=~/testAnsible.txt mode=600"` servers
+  * Deleting directory: `ansible all -m file -a "dest=~/testAnsible.txt state=absent"`
+  * Adding user: ` ansible servers -m file -a "dest=/usr/bhavin mode=755 owner=bhavin group=bhavin state=directory"`
+  * Adding user with __user__ module: `ansible all -m user -a "name=horton state=present"`
+  * Creating director: `ansible servers -m file -a "dest=/usr/bhavin mode=755 owner=bhavin group=bhavin state=directory"`
+  * To start a service: ` ansible servers -m service -a "name=ntpd state=started"` & state=restart to restart, state=stopped to stop
+  * To gather fact about the machines: `ansible all -m setup`
 
 
