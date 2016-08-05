@@ -11,11 +11,11 @@
     - AmbariRepo
 
 - name: Setup Ambari Server
-  hosts: ambari_server
+  hosts: ambari
   roles:
     - AmbariServer
 
 - name: Setup Ambari Agent
-  hosts: ambari_agent
+  hosts: all
   roles:
     - AmbariAgent
