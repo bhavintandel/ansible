@@ -1,3 +1,5 @@
+[ansible]
+node1.hc.com
 
 [ambari]                                                          
 node1.hc.com                                                      
