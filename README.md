@@ -1,3 +1,7 @@
+## Ambari-Deployment
+This repository aims at automating the cluster deployment by using configuration management tool ansible. We have writted this for RedHat distribution machine _centos 6.5_.
+
+
 ## Usage
 
 #### 1. Set PasswordLess SSH
