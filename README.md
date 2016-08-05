@@ -2,6 +2,10 @@
 
 #### 1. Set PasswordLess SSH
 
+#### 2. Download the git
+`git clone https://github.com/CloudwickShared/ansible`
+`cd ansible`
+
 #### 2. Set Ansible
 `sh setEPEL.sh`
 
