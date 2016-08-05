@@ -38,4 +38,7 @@
 
     - name: install postgresql connector
       yum: name=postgresql-jdbc state=present
+
+    - name: install postgresql
+      yum: name=postgresql-server state=present
                                                                                  
