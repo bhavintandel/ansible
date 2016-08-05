@@ -1,0 +1,41 @@
+---
+    - name: update yum
+      yum: name=yum state=latest
+    - name: install wget
+      yum: name=wget state=present
+    - name: install curl
+      yum: name=curl state=present
+    - name: install tar
+      yum: name=tar state=present
+    - name: install unzip
+      yum: name=unzip state=present
+
+    - name: stopping iptables
+      service: name=iptables state=stopped enabled=no
+    - name: stopping ip6tables
+      service: name=ip6tables state=stopped enabled=no
+
+    - name: disable swap
+      command: sysctl -w vm.swappiness=0
+    - shell: echo 0 > /proc/sys/vm/swappiness
+
+    - name: edit SELINUX status
+      lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=disabled
+
+    - name: ntp install
+      yum: name=ntp state=present
+    - name: start ntpd
+      service: name=ntpd state=started enabled=yes
+
+    - name: update openssl
+      yum: name=openssl state=latest
+
+    - name: install mysql-connector-java
+      yum: name=mysql-connector-java state=present
+
+    - name: copying /etc/hosts to agents
+      copy: src=/etc/hosts dest=/etc/hosts
+
+    - name: install postgresql connector
+      yum: name=postgresql-jdbc state=present
+                                                                                 

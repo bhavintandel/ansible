@@ -1,0 +1,4 @@
+---
+
+download_url: http://public-repo-1.hortonworks.com/ambari/centos6/2.x/updates/2.2.1.1/ambari.repo
+download_folder: /etc/yum.repos.d

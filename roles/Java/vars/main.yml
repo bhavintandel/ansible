@@ -1,0 +1,6 @@
+---
+
+download_url: http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.rpm
+download_folder: /opt
+java_name: "{{download_folder}}/jdk1.8.0_101"
+java_archive: "{{download_folder}}/jdk-8u101-linux-x64.rpm"
