@@ -19,3 +19,8 @@
   hosts: all
   roles:
     - AmbariAgent
+
+- name: Apply Blueprint
+  hosts: ambari
+  roles: 
+    - blueprint
