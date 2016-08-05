@@ -32,5 +32,8 @@ psql
 drop database ambari
 ```
 
+To check existing connection in psql
+`Select * from pg_stat_activity;`
+
 
 
