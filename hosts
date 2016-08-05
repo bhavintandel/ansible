@@ -1,0 +1,9 @@
+
+[ambari_server]
+node1.hc.com
+
+[ambari_agent]
+node[1:4].hc.com
+
+[mysqlHost]
+node1.hc.com
