@@ -1,0 +1,6 @@
+---
+
+- name: Setting up EPEL
+  hosts: ansible
+  roles: 
+    - EPEL
