@@ -1,0 +1,12 @@
+---
+- name: Transfer and execute a script.
+  hosts: all
+  tasks:
+     - name: Transfer the script
+       copy: src=ambariCleanUp.sh dest=/home/ambariCleanUp.sh mode=0777
+
+     - name: Execute the script
+       command: sh /home/ambariCleanUp.sh
+
+     - name: remove postgresql-server
+       yum: name=postgresql-server state=absent
