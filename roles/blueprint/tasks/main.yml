@@ -1,9 +1,9 @@
 ---
     - name: copying blueprint to /opt
-      copy: src=blueprintMulti.json.j2 dest={{ blueprint_location }}
+      template: src=blueprintMulti.json.j2 dest={{ blueprint_location }}
 
     - name: copying hostmapping to /opt
-      copy: src=hostmapping.json.j2 dest={{ hostmap_location }}
+      template: src=hostmapping.json.j2 dest={{ hostmap_location }}
 
     - name: register blueprint
       shell: 'curl -H "X-Requested-By: ambari" -X POST -u admin:admin http://{{ item }}:8080/api/v1/blueprints/{{ blueprint_name }} -d @{{ blueprint_location }}'
