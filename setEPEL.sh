@@ -5,3 +5,6 @@ cd /opt/ && wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noa
 
 # unpack it
 rpm -ivh epel-release-latest-6.noarch.rpm
+
+# Install ansible
+yum install ansible -y
