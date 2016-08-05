@@ -1,0 +1,16 @@
+---
+    - name: copying blueprint to /opt
+      copy: src=blueprintMulti.json dest={{ blueprint_location }}
+
+    - name: copying hostmapping to /opt
+      copy: src=clusterTemplate.json dest={{ hostmap_location }}
+
+    - name: register blueprint
+      shell: 'curl -H "X-Requested-By: ambari" -X POST -u admin:admin http://{{ item }}:8080/api/v1/blueprints/{{ blueprint_name }} -d @{{ blueprint_location }}'
+      with_items:
+        - "{{ groups['ambari'] }}"
+
+    - name: deploy cluster
+      shell: 'curl -H "X-Requested-By: ambari" -X POST -u admin:admin http://{{ item }}:8080/api/v1/clusters/{{ cluster_name }} -d @{{ hostmap_location }}'
+      with_items:
+        - "{{ groups['ambari'] }}"

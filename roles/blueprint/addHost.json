@@ -1,0 +1,4 @@
+{
+  "blueprint" : "blueprintMulti",
+  "host_group" : "slave"
+}

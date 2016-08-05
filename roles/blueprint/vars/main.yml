@@ -1,0 +1,5 @@
+
+blueprint_name: blueprintMulti              
+blueprint_location: /opt/blueprintMulti.json
+cluster_name: myCluster                     
+hostmap_location: /opt/hostmapping.json     

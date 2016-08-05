@@ -1,0 +1,25 @@
+{
+"blueprint" : "blueprintMulti",
+"default_password" : "admin",
+"host_groups" :[
+   {
+     "name" : "master",
+     "hosts" : [
+       {
+         "fqdn" : "node1.hc.com"
+       }
+     ]
+   },
+   {
+     "name" : "slave",
+     "hosts" : [
+       {
+         "fqdn" : "node2.hc.com"
+       },
+       {
+         "fqdn" : "node4.hc.com"
+       }
+     ]
+   }
+]
+}
