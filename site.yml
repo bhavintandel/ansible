@@ -1,0 +1,21 @@
+---
+
+- name: Installing PreRequisites
+  hosts: all
+  roles: 
+    - PreRequisite
+
+- name: Downloading Ambari Repo
+  hosts: all
+  roles:
+    - AmbariRepo
+
+- name: Setup Ambari Server
+  hosts: ambari_server
+  roles:
+    - AmbariServer
+
+- name: Setup Ambari Agent
+  hosts: ambari_agent
+  roles:
+    - AmbariAgent
