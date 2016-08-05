@@ -3,8 +3,10 @@
 #### 1. Set PasswordLess SSH
 
 #### 2. Download the git
-`git clone https://github.com/CloudwickShared/ansible`
-`cd ansible`
+```
+git clone https://github.com/CloudwickShared/ansible
+cd ansible
+```
 
 #### 2. Set Ansible
 `sh setEPEL.sh`
@@ -24,8 +26,11 @@
 
 
 ** P.S. By default Ambari uses postgres, so while cleaning one need to drop database from psql to avoid ambari to reuse it. **
-`su - postgres`
-`psql`
-`drop database ambari`
+```
+su - postgres
+psql
+drop database ambari
+```
+
 
 
