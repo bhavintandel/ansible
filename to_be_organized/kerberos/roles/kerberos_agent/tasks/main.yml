@@ -1,0 +1,7 @@
+---
+  - name: Install Server componenets
+    yum: name={{ item }} state=present
+    with_items: '{{ kerberos_pkg }}'
+
+  - name: Copy krb5.conf file
+    template: src=krb5.conf.j2 dest=/etc/krb5.conf

@@ -1,0 +1,6 @@
+---
+
+kerberos_pkg:
+  - libselinux-python
+  - krb5-libs
+  - krb5-workstation

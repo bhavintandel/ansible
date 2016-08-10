@@ -1,0 +1,8 @@
+---
+
+realm_name: HC.COM
+kdc_server: node1.hc.com
+kdc_port: 88
+master_db_pass: hadoop
+kadmin_pass: admin
+kadmin_user: admin
