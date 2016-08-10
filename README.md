@@ -11,16 +11,15 @@ This repository aims at automating the cluster deployment by using configuration
   git clone https://github.com/CloudwickShared/ansible
   cd ansible
   ```
-
-#### 2. Set Ansible
+#### 3. Set Ansible
 `sh setEPEL.sh`
 
-#### 3. Edit hosts file and also /etc/hosts
+#### 4. Edit hosts file and also /etc/hosts
 
-#### 4. If Java not present, install java
+#### 5. If Java not present, install java
 `ansible-playbook -i hosts installJava.yml`
 
-#### 5. Run the HDP Setup
+#### 6. Run the HDP Setup
 `ansible-playbook -i hosts site.yml`
 
 
