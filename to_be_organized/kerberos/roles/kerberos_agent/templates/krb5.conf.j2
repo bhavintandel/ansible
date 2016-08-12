@@ -13,8 +13,8 @@
 
 [realms]
  {{ realm_name| upper() }} = {
-  kdc = {{ kdc_server }}.{{ realm_name|lower() }}
-  admin_server = {{ kdc_server }}.{{ realm_name|lower() }}
+  kdc = {{ kdc_server }}
+  admin_server = {{ kdc_server }}
  }
 
 [domain_realm]
