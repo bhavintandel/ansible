@@ -19,6 +19,9 @@
       command: sysctl -w vm.swappiness=0
     - shell: echo 0 > /proc/sys/vm/swappiness
 
+    - name: Install libselinux-python
+      yum: name=libselinux-python state=present
+
     - name: edit SELINUX status
       lineinfile: dest=/etc/selinux/config regexp=^SELINUX= line=SELINUX=disabled
 
@@ -39,6 +42,3 @@
     - name: install postgresql connector
       yum: name=postgresql-jdbc state=present
 
-    - name: install postgresql
-      yum: name=postgresql-server state=present
-                                                                                 
