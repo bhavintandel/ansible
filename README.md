@@ -7,20 +7,19 @@ This repository aims at automating the cluster deployment by using configuration
 #### 1. Set PasswordLess SSH
 
 #### 2. Download the git
-```
-git clone https://github.com/CloudwickShared/ansible
-cd ansible
-```
-
-#### 2. Set Ansible
+  ```
+  git clone https://github.com/CloudwickShared/ansible
+  cd ansible
+  ```
+#### 3. Set Ansible
 `sh setEPEL.sh`
 
-#### 3. Edit hosts file and also /etc/hosts
+#### 4. Edit hosts file and also /etc/hosts
 
-#### 4. If Java not present, install java
+#### 5. If Java not present, install java
 `ansible-playbook -i hosts installJava.yml`
 
-#### 5. Run the HDP Setup
+#### 6. Run the HDP Setup
 `ansible-playbook -i hosts site.yml`
 
 
