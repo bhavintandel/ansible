@@ -12,5 +12,4 @@
       dest={{download_folder}}
       headers='Cookie:oraclelicense=accept-securebackup-cookie'
   
-  - unarchive: src={{download_folder}}/jce_policy-8.zip dest={{unpack_folder}} copy=no
-
+  - command: unzip -o -j -q {{download_folder}}/jce_policy-8.zip -d {{unpack_folder}}
