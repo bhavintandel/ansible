@@ -1,6 +1,7 @@
 #!/bin/bash
 ambari-server stop
 ambari-agent stop
+sudo -u postgres psql -c "drop database ambari"
 pkill -9 java
 #################################
 # Remove Packages
