@@ -1,0 +1,38 @@
+{
+    "blueprint": "kerberosBlueprint",
+    "default_password": "admin",
+    "host_groups": [
+        {
+          "hosts": [
+              { "fqdn": "node1.hc.com" }
+          ],
+          "name": "master1",
+          "configurations" : [ ]
+        },
+        {
+          "hosts": [
+              { "fqdn": "node2.hc.com" }
+          ],
+          "name": "master2",
+          "configurations" : [ ]
+        },
+        {
+          "hosts": [
+              { "fqdn": "node3.hc.com" }
+          ],
+          "name": "slave",
+          "configurations" : [ ]
+        }
+    ],
+    "credentials" : [
+     {
+       "alias" : "kdc.admin.credential",
+       "principal" : "admin/admin",
+       "key" : "admin",
+       "type" : "TEMPORARY"
+     }
+    ],
+    "security" : {
+        "type" : "KERBEROS"
+   }
+}
