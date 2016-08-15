@@ -1,0 +1,105 @@
+{
+  "configurations" : [
+    {
+      "kerberos-env": {
+        "properties_attributes" : { },
+        "properties" : {
+          "realm" : "HC.COM",
+          "kdc_type" : "mit-kdc",
+          "kdc_host" : "node1.hc.com",
+          "admin_server_host" : "node1.hc.com",
+          "container_dn" : "",
+          "ldap_url" : "",
+          "create_attributes_template" : "",
+          "encryption_types" : "aes des3-cbc-sha1 rc4 des-cbc-md5" 
+        }
+      }
+    },
+    {
+      "krb5-conf": {
+        "kdc.realm": "HC.COM",
+ 	"kdc.domain": "hc.com",
+	"kdc.admin": "admin/admin",
+        "kdc.adminpassword": "admin",
+	"kdb.password": "hadoop",
+        "properties_attributes" : { },
+        "properties" : {
+          "domains" : "HC.COM",
+          "manage_krb5_conf" : "true"
+        }
+      }
+    }
+  ],
+  "host_groups" : [
+    {
+      "name" : "master1",
+      "configurations" : [ ],
+      "components" : [
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "NAMENODE"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "DATANODE"
+        }
+      ],
+      "cardinality" : "1"
+    },
+    {
+      "name" : "master2",
+      "configurations" : [ ],
+      "components" : [
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "KERBEROS_CLIENT"
+        },
+        {
+          "name" : "SECONDARY_NAMENODE"
+        },
+        {
+          "name" : "DATANODE"
+        }
+      ],
+      "cardinality" : "1"
+    },
+    {
+      "name" : "slave",
+      "components" : [
+        {
+          "name" : "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name" : "ZOOKEEPER_SERVER"
+        },
+        {
+          "name" : "KERBEROS_CLIENT"
+        },
+        {
+          "name" : "HDFS_CLIENT"
+        },
+        {
+          "name" : "DATANODE"
+        }
+      ],
+      "cardinality" : "1"
+    }
+  ],
+  "Blueprints" : {
+    "blueprint_name" : "kerberosBlueprint",
+    "stack_name" : "HDP",
+    "stack_version" : "2.4",
+    "security" : {
+         "type" : "KERBEROS"
+    }
+  }
+}
