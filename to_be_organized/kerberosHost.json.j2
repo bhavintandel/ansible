@@ -1,0 +1,44 @@
+{
+"blueprint" : "kerberosBlueprint",
+"default_password" : "admin",
+"host_groups" :[
+   {
+     "name" : "host_group_2",
+     "hosts" : [
+       {
+         "fqdn" : "master1.cloudwick.com"
+       }
+     ]
+   },
+   {
+     "name" : "host_group_3",
+     "hosts" : [
+       {
+         "fqdn" : "master2.cloudwick.com"
+       }
+     ]
+   },
+   {
+     "name" : "host_group_1",
+     "hosts" : [
+       {
+         "fqdn" : "datanode1.cloudwick.com"
+       },
+       {                                   
+         "fqdn" : "datanode1.cloudwick.com"
+       }                                   
+     ]
+   }
+],
+"credentials" : [
+     {
+       "alias" : "kdc.admin.credential",
+       "principal" : "admin/admin@HC.COM",
+       "key" : "admin",
+       "type" : "TEMPORARY"
+     }
+    ],
+    "security" : {
+        "type" : "KERBEROS"
+   }
+}
