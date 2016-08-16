@@ -30,13 +30,6 @@ This repository aims at automating the cluster deployment by using configuration
 `ansible-playbook -i hosts cleanUp.yml`
 
 
-** P.S. By default Ambari uses postgres, so while cleaning one need to drop database from psql to avoid ambari to reuse it. **
-```
-su - postgres
-psql
-drop database ambari
-```
-
 To check existing connection in psql
 `Select * from pg_stat_activity;`
 
