@@ -5,3 +5,6 @@
 
   - name: start mysql-server
     service: name=mysqld state=started
+
+  - name: MySQLdb python package
+    yum: name=MySQL-python state=present
