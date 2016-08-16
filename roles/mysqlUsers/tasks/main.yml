@@ -1,0 +1,10 @@
+---
+
+ - name: Create hive user
+   mysql_user: name=hive host=% password=hive priv=*.*:ALL,GRANT state=present
+
+ - name: Create Oozie user
+   mysql_user: name=oozie host=% password=oozie priv=*.*:ALL,GRANT state=present
+
+ - name: Create Ranger user
+   mysql_user: name=ranger host=% password=ranger priv=*.*:ALL,GRANT state=present
